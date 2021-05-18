@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:final_gloggapp/ui/home.dart';
+import 'package:final_gloggapp/ui/screens/home.dart';
 
 class RecipesApp extends StatelessWidget {
   @override
