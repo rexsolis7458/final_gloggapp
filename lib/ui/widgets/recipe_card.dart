@@ -19,10 +19,10 @@ class RecipeCard extends StatelessWidget {
         onPressed: () => onFavoriteButtonPressed(recipe.id),
         child: Icon(
           inFavorites == true ? Icons.favorite : Icons.favorite_border,
-          color: Theme.of(context).iconTheme.color,
+          // color: Theme.of(context).iconTheme.color,
         ),
         elevation: 2.0,
-        fillColor: Theme.of(context).buttonColor,
+        //fillColor: Theme.of(context).buttonColor,
         shape: CircleBorder(),
       );
     }
@@ -31,15 +31,11 @@ class RecipeCard extends StatelessWidget {
       return Padding(
         padding: EdgeInsets.all(15.0),
         child: Column(
-          // Default value for crossAxisAlignment is CrossAxisAlignment.center.
-          // We want to align title and description of recipes left:
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               recipe.name,
-              //style: Theme.of(context).textTheme.title,
             ),
-            // Empty space:
             SizedBox(height: 10.0),
             Row(
               children: [
@@ -47,7 +43,6 @@ class RecipeCard extends StatelessWidget {
                 SizedBox(width: 5.0),
                 Text(
                   recipe.getDurationString,
-                  style: Theme.of(context).textTheme.caption,
                 ),
               ],
             ),
@@ -65,8 +60,6 @@ class RecipeCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              // We overlap the image and the button by
-              // creating a Stack object:
               Stack(
                 children: <Widget>[
                   AspectRatio(

@@ -6,6 +6,7 @@ enum RecipeType {
 }
 
 class Recipe {
+  String get getDurationString => prettyDuration(this.duration);
   final String id;
   final RecipeType type;
   final String name;
@@ -23,8 +24,6 @@ class Recipe {
     this.preparation,
     this.imageURL,
   });
-
-  String get getDurationString => prettyDuration(this.duration);
 
   Recipe.fromMap(Map<String, dynamic> data, String id)
       : this(
