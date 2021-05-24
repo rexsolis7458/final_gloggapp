@@ -3,17 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:final_gloggapp/utils/store.dart';
 import 'package:final_gloggapp/recipe.dart';
 
-
 class HomeScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new HomeScreenState();
 }
 
-
 class HomeScreenState extends State<HomeScreen> {
   List<Recipe> recipes = getRecipes();
   List<String> userFavorites = getFavoritesIDs();
-
 
   void _handleFavoritesListChanged(String recipeID) {
     setState(() {
@@ -24,7 +21,6 @@ class HomeScreenState extends State<HomeScreen> {
       }
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +43,7 @@ class HomeScreenState extends State<HomeScreen> {
       );
     }
 
-
     const double _iconSize = 20.0;
-
 
     return DefaultTabController(
       length: 5,
@@ -81,11 +75,11 @@ class HomeScreenState extends State<HomeScreen> {
               _buildRecipes(recipes
                   .where((recipe) => recipe.type == RecipeType.drink)
                   .toList()),
+              Center(child: Icon(Icons.add)),
+              Center(child: Icon(Icons.list_outlined)),
               _buildRecipes(recipes
                   .where((recipe) => userFavorites.contains(recipe.id))
                   .toList()),
-              Center(child: Icon(Icons.list_outlined)),
-              Center(child: Icon(Icons.emoji_emotions_outlined)),
             ],
           ),
         ),
