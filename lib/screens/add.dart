@@ -59,16 +59,18 @@ class _AddState extends State<Add> {
             Container(
               padding: const EdgeInsets.all(20.0),
               alignment: Alignment.bottomLeft,
-              child: Text(
-                "Publish Recipe",
-              ),
+              child: Text("Publish Recipe",
+                  style: new TextStyle(
+                    decoration: TextDecoration.underline,
+                    fontSize: 25,
+                  )),
             ),
             addRecipe('Photos and videos'),
             Container(
                 alignment: Alignment.bottomLeft,
                 child: IconButton(
                   iconSize: 100.0,
-                  icon: Icon(Icons.add_box_outlined),
+                  icon: Icon(Icons.image_outlined),
                   onPressed: () => pickImage(),
                 )),
             addRecipe('Name'),
@@ -89,7 +91,7 @@ class _AddState extends State<Add> {
             ),
             addRecipe('Ingredients'),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(6.0),
               child: Container(
                 child: ListView.builder(
                   shrinkWrap: true,
@@ -103,20 +105,16 @@ class _AddState extends State<Add> {
             ),
             Container(
               alignment: Alignment.bottomLeft,
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: RaisedButton(
+              padding: EdgeInsets.symmetric(horizontal: 12.0),
+              child: FlatButton(
+                child: Text(" + Add ingredient"),
+                textColor: Colors.orange,
                 onPressed: () {
                   setState(() {
                     ingredients.add(TextEditingController());
                     amount.add(TextEditingController());
                   });
                 },
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text("add ingredient"),
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
               ),
             ),
             addRecipe('Recipe'),
@@ -136,20 +134,17 @@ class _AddState extends State<Add> {
             Container(
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: RaisedButton(
+              child: FlatButton(
+                child: Text(
+                  "Add Recipe",
+                  style: new TextStyle(fontSize: 17.0),
+                ),
+                textColor: Colors.orange,
                 onPressed: () {
                   setState(() {
                     recipe.add(TextEditingController());
                   });
                 },
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "Add Recipe",
-                  ),
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
               ),
             ),
             Container(
