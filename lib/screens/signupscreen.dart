@@ -1,3 +1,4 @@
+import 'package:final_gloggapp/service/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:final_gloggapp/service/authentication.dart';
@@ -21,7 +22,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage("https://www.restorationcity.church/wp-content/uploads/2018/10/brooke-lark-385507-unsplash.jpg"),
+            image: NetworkImage(
+                "https://www.restorationcity.church/wp-content/uploads/2018/10/brooke-lark-385507-unsplash.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -62,6 +64,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         password: passwordController.text.trim(),
                         context: context,
                       );
+                  userSetup(
+                    emailController.text,
+                    passwordController.text,
+                  );
                 },
                 child: Text(
                   "Sign Up",
