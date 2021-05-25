@@ -1,6 +1,8 @@
+import 'package:final_gloggapp/screens/add.dart';
 import 'package:final_gloggapp/screens/recipe_card.dart';
 import 'package:flutter/material.dart';
 import 'package:final_gloggapp/utils/store.dart';
+import 'package:final_gloggapp/recipe.dart';
 import 'package:final_gloggapp/recipe.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -75,7 +77,7 @@ class HomeScreenState extends State<HomeScreen> {
               _buildRecipes(recipes
                   .where((recipe) => recipe.type == RecipeType.drink)
                   .toList()),
-              Center(child: Icon(Icons.add)),
+              Add(),
               Center(child: Icon(Icons.list_outlined)),
               _buildRecipes(recipes
                   .where((recipe) => userFavorites.contains(recipe.id))
