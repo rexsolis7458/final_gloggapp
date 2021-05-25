@@ -266,7 +266,7 @@ class AddRecipe extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             )));
   }
